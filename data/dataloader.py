@@ -2,13 +2,14 @@ import os
 
 import numpy as np
 import pandas as pd
-from typing import Tuple
+from typing import Tuple, Optional
 
 
 def load_field_df(
     field_name: str,
     data_root_path: str,
-    shift: int = 0
+    shift: int = 0,
+    end_ts: Optional[pd.Timestamp] = None,
 ) -> pd.DataFrame:
     """
     Loads data fields into DataFrame with DateTimeIndex.
@@ -17,6 +18,7 @@ def load_field_df(
         field_name: name of the field to load
         data_root_path: path to the data root directory
         shift: number of periods to shift the data by. Positive shift lags, negative shift peeks into the future.
+        end_ts: end date of the DataFrame. If None, the whole DataFrame is returned.
 
     Returns:
         DataFrame with DateTimeIndex. 
@@ -25,13 +27,15 @@ def load_field_df(
     df = load_path_df(os.path.join(data_root_path, field_name+'.csv'))
     df.index = pd.DatetimeIndex(pd.to_datetime(df.index))
     df = df.shift(shift)
+    if end_ts is not None:
+        df = df.loc[:end_ts, :]
     return df
 
 
 def load_path_df(
     csvfile_path: str, 
     exclude_tickers: Tuple = (), 
-    dtype: np.dtype = np.float64,
+    dtype: type = np.float64,
 ) -> pd.DataFrame:
     """
     Reads data into pandas from csv files.
