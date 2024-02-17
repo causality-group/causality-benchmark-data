@@ -11,7 +11,7 @@ def plot_pnl(
     ylabel: Optional[str] = 'Cumulative PnL',
     title: Optional[str] = 'Profit and Loss Curve',
     append_legends: Optional[List[str]] = None,
-    figure_size: Optional[Tuple[int, int]] = (10, 6)
+    figure_size: Tuple[int, int] = (10, 6)
 ):
     """
     Plots a PnL DataFrame.
@@ -26,11 +26,14 @@ def plot_pnl(
     """
     plt.figure(figsize=figure_size)
     plt.plot(pnl_df.index, pnl_df.cumsum().values)
-    plt.xlabel(xlabel)
-    plt.ylabel(ylabel)
-    plt.title(title)
+    if xlabel is not None:
+        plt.xlabel(xlabel)
+    if ylabel is not None:
+        plt.ylabel(ylabel)
+    if title is not None:
+        plt.title(title)
     legends = pnl_df.columns.tolist()
-    if append_legends:
+    if append_legends is not None:
         new_legend = []
         for i, item in enumerate(legends):
             new_legend += [legends[i] + item]
