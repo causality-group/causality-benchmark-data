@@ -13,7 +13,7 @@ def load_field_df(
 ) -> pd.DataFrame:
     """
     Loads data fields into DataFrame with DateTimeIndex.
-    
+
     Args:
         field_name: name of the field to load
         data_root_path: path to the data root directory
@@ -21,10 +21,10 @@ def load_field_df(
         end_ts: end date of the DataFrame. If None, the whole DataFrame is returned.
 
     Returns:
-        DataFrame with DateTimeIndex. 
+        DataFrame with DateTimeIndex.
         Columns are strings including ticker symbol, exchange and CFI category, while rows are dates of the observations.
     """
-    df = load_path_df(os.path.join(data_root_path, field_name+'.csv'))
+    df = load_path_df(os.path.join(data_root_path, field_name + ".csv"))
     df.index = pd.DatetimeIndex(pd.to_datetime(df.index))
     df = df.shift(shift)
     if end_ts is not None:
@@ -33,8 +33,8 @@ def load_field_df(
 
 
 def load_path_df(
-    csvfile_path: str, 
-    exclude_tickers: Tuple = (), 
+    csvfile_path: str,
+    exclude_tickers: Tuple = (),
     dtype: type = np.float64,
 ) -> pd.DataFrame:
     """
@@ -48,7 +48,7 @@ def load_path_df(
     Returns:
         pd.DataFrame with time index and columns for each ticker
     """
-    if 'str' in str(dtype):
+    if "str" in str(dtype):
         df = pd.read_csv(
             csvfile_path,
             # avoid DtypeWarning: Columns (1..1330) have mixed types. Specify dtype option on import or set low_memory=False
@@ -58,7 +58,7 @@ def load_path_df(
             parse_dates=False,
             dtype=dtype,
         )
-    else:   # numeric type
+    else:  # numeric type
         df = pd.read_csv(
             csvfile_path,
             # avoid DtypeWarning: Columns (1..1330) have mixed types. Specify dtype option on import or set low_memory=False
@@ -71,7 +71,7 @@ def load_path_df(
     if len(exclude_tickers):
         for ex in exclude_tickers:
             df = df[[s for s in df.columns if ex not in s]]
-    if 'str' in str(dtype):
+    if "str" in str(dtype):
         return df
     else:  # numeric type
         return df.astype(dtype=dtype, copy=False)
