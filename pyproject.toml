@@ -27,4 +27,4 @@ requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
 
 [tool.poetry.scripts]
-install-causality-ipykernel = "causality_forecast_darts.install_ipykernel"
+install-causality-ipykernel = "causality_forecast_darts.install_ipykernel:install_ipykernel"
