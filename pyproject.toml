@@ -14,7 +14,7 @@ stats = "0.1.2a"
 
 [tool.poetry.group.dev.dependencies]
 pytest = "^8.0.1"
-black = "^24.2.0"
+black = {extras = ["jupyter"], version = "^24.2.0"}
 pylint = "^3.0.3"
 pre-commit = "^3.6.2"
 

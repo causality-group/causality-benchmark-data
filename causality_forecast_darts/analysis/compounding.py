@@ -1,3 +1,5 @@
+"""Functionality to compound returns."""
+
 import pandas as pd
 
 

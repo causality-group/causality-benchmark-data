@@ -1,8 +1,10 @@
+"""Functionality to evaluate performance."""
+
+from typing import List, Optional, Tuple
+
 import numpy as np
 import matplotlib.pyplot as plt
 import pandas as pd
-
-from typing import List, Optional, Tuple
 
 
 def plot_pnl(
@@ -65,7 +67,8 @@ def calculate_performance_df(
 
     Returns:
         pd.DataFrame with performance metrics.
-        Performance metrics are rows of the DataFrame, and column names match column names in the pnl_df argument.
+        Performance metrics are rows of the DataFrame,
+        and column names match column names in the pnl_df argument.
     """
 
     num_periods_per_year = len(pnl_df.index) / (
@@ -119,7 +122,8 @@ def calculate_performance_df(
     # Martin Ratio
     performance_df["Martin Ratio"] = pnl_df.mean() / pnl_df.std() * np.sqrt(len(pnl_df))
 
-    # # Statistical significance of the null-hypothesis that the mean PnL is zero or negative, using one sided t-test
+    # # Statistical significance of the null-hypothesis that
+    # the mean PnL is zero or negative, using one sided t-test
     # t_stat, p_value = stats.ttest_1samp(pnl_df, 0, alternative='less')
     # performance_df['T-Test p-value'] = p_value
 
