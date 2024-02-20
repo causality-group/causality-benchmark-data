@@ -1058,13 +1058,13 @@ test = ["speedy_antlr_tool"]
 
 [[package]]
 name = "holidays"
-version = "0.42"
+version = "0.43"
 description = "Generate and work with holidays in Python"
 optional = false
 python-versions = ">=3.8"
 files = [
-    {file = "holidays-0.42-py3-none-any.whl", hash = "sha256:13119a03d33efe50f76ee06042f82bbbc748ba049d3a6c413dba143f577efc7c"},
-    {file = "holidays-0.42.tar.gz", hash = "sha256:1a410a1e68ed460cfbce3fd7fb6d467655a75603e4c7c941b4fbb0535660e23f"},
+    {file = "holidays-0.43-py3-none-any.whl", hash = "sha256:1dca114761bac05fe3e6684d55903c3bd9fb757c37c3dac9da66afd7f8788e38"},
+    {file = "holidays-0.43.tar.gz", hash = "sha256:29e2c5436207dd268a3702338bcc92032aaacf47ed3bb324ff9ba8170e6d0932"},
 ]
 
 [package.dependencies]
@@ -3059,13 +3059,13 @@ files = [
 
 [[package]]
 name = "sqlglot"
-version = "21.1.1"
+version = "21.1.2"
 description = "An easily customizable SQL parser and transpiler"
 optional = false
 python-versions = ">=3.7"
 files = [
-    {file = "sqlglot-21.1.1-py3-none-any.whl", hash = "sha256:228c11e4d185297e2c19fc6848db59a236375400ec44fabda1fc304e3e1ef97c"},
-    {file = "sqlglot-21.1.1.tar.gz", hash = "sha256:f8a1cb4842fd19aff367d5df210de285947f1ff1f9177f65dcc1c6f60bf0c63e"},
+    {file = "sqlglot-21.1.2-py3-none-any.whl", hash = "sha256:51f5b339f3b8102d99f04909880c8e3c07ed0184a0b0ee48e3a2f2743896a7a3"},
+    {file = "sqlglot-21.1.2.tar.gz", hash = "sha256:be134965b531c3cab395b8d4597dd475d4d8de60a18bde1fe1c663e4d32006bf"},
 ]
 
 [package.extras]
@@ -3726,4 +3726,4 @@ testing = ["big-O", "jaraco.functools", "jaraco.itertools", "more-itertools", "p
 [metadata]
 lock-version = "2.0"
 python-versions = "~3.9"
-content-hash = "6678b6069149f76b5f5953b96ff04f5c6d34009adfb69cc1825e3f86b40c5633"
+content-hash = "f2c99467a1d7f5d88afc120be72dbb9aae48a0434baeed3812b99d7251bdd254"
