@@ -7,6 +7,7 @@ import numpy as np
 import pandas as pd
 
 
+
 def load_field_df(
     field_name: str,
     data_root_path: str,
@@ -78,5 +79,8 @@ def load_path_df(
     if exclude_tickers:
         for ex in exclude_tickers:
             df = df[[s for s in df.columns if ex not in s]]
+
     if "str" in str(dtype):
         return df
+    else:  # numeric type
+        return df.astype(dtype=dtype, copy=False)
