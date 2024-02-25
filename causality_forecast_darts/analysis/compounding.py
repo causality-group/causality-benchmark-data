@@ -1,12 +1,11 @@
+"""Functionality to compound returns."""
+
 import pandas as pd
 
 
-def compound_ret_df(
-    df1: pd.DataFrame, 
-    df2: pd.DataFrame
-) -> pd.DataFrame:
+def compound_ret_df(df1: pd.DataFrame, df2: pd.DataFrame) -> pd.DataFrame:
     """Compounds arithmetic returns.
-    
+
     Args:
         df1: DataFrame with arithmetic returns
         df2: DataFrame with arithmetic returns
