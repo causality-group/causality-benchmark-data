@@ -13,6 +13,7 @@ def load_field_df(
     data_root_path: str,
     shift: int = 0,
     end_ts: Optional[pd.Timestamp] = None,
+    dtype: type = np.float64,
 ) -> pd.DataFrame:
     """
     Loads data fields into DataFrame with DateTimeIndex.
@@ -24,13 +25,14 @@ def load_field_df(
             Positive shift lags, negative shift peeks into the future.
         end_ts: end date of the DataFrame.
             If None, the whole DataFrame is returned.
+        dtype: data type to read in
 
     Returns:
         DataFrame with DateTimeIndex.
         Columns are strings including ticker symbol,
             exchange and CFI category, while rows are dates of the observations.
     """
-    df = load_path_df(os.path.join(data_root_path, field_name + ".csv"))
+    df = load_path_df(os.path.join(data_root_path, field_name + ".csv"), dtype=dtype)
     df.index = pd.DatetimeIndex(pd.to_datetime(df.index))
     df = df.shift(shift)
     if end_ts is not None:
