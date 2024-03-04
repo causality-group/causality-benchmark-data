@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "causality-forecast-darts"
+name = "causalitydata"
 version = "0.1.0"
 description = "Showcasing time series forecasting and machine learning optimization with Darts."
 authors = ["Causality Group"]

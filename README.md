@@ -1,4 +1,4 @@
-# causality-forecast-darts
+# causalitydata
 Showcasing time series forecasting and machine learning optimization with Darts.
 
 # Installation

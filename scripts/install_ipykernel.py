@@ -10,7 +10,7 @@ logging.basicConfig(level=logging.INFO)
 def install_ipykernel():
     """Installs causality ipykernel."""
     try:
-        install(user=True, kernel_name="causality-forecast-darts-p3.9")
+        install(user=True, kernel_name="causalitydata-p3.9")
         logging.info("Successfully installed causality ipykernel.")
     except Exception as e:
         logging.error("Failed to install causality ipykernel.")
