@@ -20,6 +20,16 @@ def compound_ret_df(df1: pd.DataFrame, df2: pd.DataFrame) -> pd.DataFrame:
     return (1.0 + df1) * (1.0 + df2) - 1.0
 
 
+def _sum_nan_if_all_nan_df(df: pd.DataFrame) -> pd.Series:
+    """
+    If all values in a column are NaN, result will be NaN.
+    Otherwise, the sum of the values.
+    """
+    sum_ser = df.sum(axis=0)
+    all_nan_ser = df.count(axis=0) == 0
+    sum_ser[all_nan_ser] = np.nan
+    return sum_ser
+
 
 def compound_upcoming_bar_return_cc_df(
     ret_cc_df: pd.DataFrame, 
@@ -38,7 +48,7 @@ def compound_upcoming_bar_return_cc_df(
     log_bar_ret_df = pd.DataFrame(
         {
             # Indexing my Timestamp is inclusive, hence: -EPSILON_TIME
-            ts: ret_cc_df.loc[ts:bar_tss[i+1]-EPSILON_TIME, :].sum()
+            ts: _sum_nan_if_all_nan_df(ret_cc_df.loc[ts:bar_tss[i+1]-EPSILON_TIME, :])
             for i, ts in enumerate(bar_tss[:-1])
         }
     ).T
@@ -58,13 +68,12 @@ def compound_observable_bar_return_cc_df(
     Returns bars do not overlap, each covers a time period from 16:00 
     between bar_tss[i] and bar_tss[i+1].
     """
-    
     ret_cc_df = np.log(ret_cc_df + 1.0)  # convert to log returns
     bar_tss = [pd.Timestamp.min] + bar_tss
     log_bar_ret_df = pd.DataFrame(
         {
             # Indexing my Timestamp is inclusive, hence: -EPSILON_TIME
-            ts: ret_cc_df.loc[bar_tss[i-1]:ts-EPSILON_TIME, :].sum()
+            ts: _sum_nan_if_all_nan_df(ret_cc_df.loc[bar_tss[i-1]:ts-EPSILON_TIME, :])
             for i, ts in enumerate(bar_tss)
             if i > 0
         }
