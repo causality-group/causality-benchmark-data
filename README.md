@@ -35,7 +35,7 @@
     <img src="images/logo.png" alt="Logo" width="600" height="185">
   </a>
 
-<h3 align="center">Causality Benchmark Dataset</h3>
+<h3 align="center">Causality Benchmark Data</h3>
 
   <p align="center">
     Showcasing time series forecasting and machine learning optimization.
@@ -86,7 +86,7 @@
 
 [![Product Name Screen Shot][product-screenshot]](https://example.com)
 
-Here's a blank template to get started: To avoid retyping too much info. Do a search and replace with your text editor for the following: `causality-group`, `causality-benchmark-dataset`, `twitter_handle`, `linkedin_username`, `email_client`, `email`, `project_title`, `project_description`
+Info about the project
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -190,9 +190,9 @@ Distributed under the ... License. See `LICENSE.txt` for more information.
 <!-- CONTACT -->
 ## Contact
 
-Causality Group's Information Contact - contact@ecausality-group.com
+Causality Group's Information Contact - info@causality-group.com
 
-Project Link: [https://github.com/causality-group/causality-benchmark-dataset](https://github.com/causality-group/causality-benchmark-dataset)
+Project Link: [https://github.com/causality-group/causality-benchmark-data](https://github.com/causality-group/causality-benchmark-data)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -211,16 +211,16 @@ Project Link: [https://github.com/causality-group/causality-benchmark-dataset](h
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
-[contributors-shield]: https://img.shields.io/github/contributors/causality-group/causality-forecast-darts?style=for-the-badge
-[contributors-url]: https://github.com/causality-group/causality-forecast-darts/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/causality-group/causality-forecast-darts.svg?style=for-the-badge
-[forks-url]: https://github.com/causality-group/causality-forecast-darts/network/members
-[stars-shield]: https://img.shields.io/github/stars/causality-group/causality-forecast-darts?style=for-the-badge
-[stars-url]: https://github.com/causality-group/causality-forecast-darts/stargazers
-[issues-shield]: https://img.shields.io/github/issues/causality-group/causality-forecast-darts.svg?style=for-the-badge
-[issues-url]: https://github.com/causality-group/causality-forecast-darts/issues
-[license-shield]: https://img.shields.io/github/license/causality-group/causality-forecast-darts.svg?style=for-the-badge
-[license-url]: https://github.com/causality-group/causality-forecast-darts/blob/master/LICENSE.txt
+[contributors-shield]: https://img.shields.io/github/contributors/causality-group/causality-benchmark-data?style=for-the-badge
+[contributors-url]: https://github.com/causality-group/causality-benchmark-data/graphs/contributors
+[forks-shield]: https://img.shields.io/github/forks/causality-group/causality-benchmark-data.svg?style=for-the-badge
+[forks-url]: https://github.com/causality-group/causality-benchmark-data/network/members
+[stars-shield]: https://img.shields.io/github/stars/causality-group/causality-benchmark-data?style=for-the-badge
+[stars-url]: https://github.com/causality-group/causality-benchmark-data/stargazers
+[issues-shield]: https://img.shields.io/github/issues/causality-group/causality-benchmark-data.svg?style=for-the-badge
+[issues-url]: https://github.com/causality-group/causality-benchmark-data/issues
+[license-shield]: https://img.shields.io/github/license/causality-group/causality-benchmark-data.svg?style=for-the-badge
+[license-url]: https://github.com/causality-group/causality-benchmark-data/blob/master/LICENSE.txt
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://linkedin.com/company/causality-group
 [product-screenshot]: images/screenshot.png
