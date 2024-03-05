@@ -104,39 +104,42 @@ Info about the project
 <!-- GETTING STARTED -->
 ## Getting Started
 
-This is an example of how you may give instructions on setting up your project locally.
-To get a local copy up and running follow these simple example steps.
+Follow these steps to set up the project on your local machine for development and testing purposes.
 
 ### Prerequisites
 
-This is an example of how to list things you need to use the software and how to install them.
-* npm
-  ```sh
-  npm install npm@latest -g
-  ```
+Ensure you have the following installed on your local setup
+- Python 3.9
+- Poetry
 
 ### Installation
 
-1. Get a free API Key at [https://example.com](https://example.com)
-2. Clone the repo
-   ```sh
-   git clone https://github.com/causality-group/causality-benchmark-dataset.git
-   ```
-3. Install NPM packages
-   ```sh
-   npm install
-   ```
-4. Enter your API in `config.js`
-   ```js
-   const API_KEY = 'ENTER YOUR API';
-   ```
+1. Clone the repository
+2. Install the dependencies
+```bash
+poetry install
+```
+3. Install the pre-commit hooks
+```bash
+poetry run pre-commit install
+```
+
+You're all set! Pre-commit hooks will run on git commit. Ensure your changes pass all checks before pushing.
+
+## Available Scripts
+- `poetry run pytest`: Run the tests.
+- `poetry run black`: Run the code formatter.
+- `poetry run lint`: Run the linter.
+- `poetry run install-ipykernel`: Install the causality kernel for Jupyter.
+- `poetry run uninstall-ipykernel`: Uninstall the causality kernel for Jupyter.
+
+> **Note:** Remember, you need to install the optional `ipykernel` group of dependencies to run the ipykernel scripts. Use `poetry install --with jupyter`.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
 
 <!-- USAGE EXAMPLES -->
-## Usage
 
 Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
 
