@@ -109,8 +109,8 @@ Follow these steps to set up the project on your local machine for development a
 ### Prerequisites
 
 Ensure you have the following installed on your local setup
-- Python 3.9
-- Poetry
+- Python 3.9.5
+- Poetry (see [installation instructions](https://python-poetry.org/docs/#installation))
 
 ### Installation
 
