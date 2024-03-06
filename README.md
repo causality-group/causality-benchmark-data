@@ -1,12 +1,7 @@
 <!-- Improved compatibility of back to top link: See: https://github.com/othneildrew/Best-README-Template/pull/73 -->
 <a name="readme-top"></a>
 <!--
-*** I'm using the README template at: https://github.com/othneildrew/Best-README-Template/blob/master/BLANK_README.md
-*** Thanks for checking out the Best-README-Template. If you have a suggestion
-*** that would make this better, please fork the repo and create a pull request
-*** or simply open an issue with the tag "enhancement".
-*** Don't forget to give the project a star!
-*** Thanks again! Now go create something AMAZING! :D
+*** We're using the README template at: https://github.com/othneildrew/Best-README-Template/blob/master/BLANK_README.md
 -->
 
 
@@ -32,19 +27,19 @@
 <br />
 <div align="center">
   <a href="https://github.com/causality-group/causality-benchmark-dataset">
-    <img src="images/logo.png" alt="Logo" width="600" height="185">
+    <img src="images/logo.png" alt="Logo" width="600" height="160">
   </a>
 
 <h3 align="center">Causality Benchmark Data</h3>
 
   <p align="center">
-    Showcasing time series forecasting and machine learning optimization.
+    Showcasing causality benchmark data through a data loading library and a signal backtesting example.
+    <!-- <br />
+    <a href="https://github.com/causality-group/causality-benchmark-dataset"><strong>Explore the docs »</strong></a> -->
     <br />
-    <a href="https://github.com/causality-group/causality-benchmark-dataset"><strong>Explore the docs »</strong></a>
     <br />
-    <br />
-    <a href="https://github.com/causality-group/causality-benchmark-dataset">View Demo</a>
-    ·
+    <!-- <a href="https://github.com/causality-group/causality-benchmark-dataset">View Demo</a>
+    · -->
     <a href="https://github.com/causality-group/causality-benchmark-dataset/issues">Report Bug</a>
     ·
     <a href="https://github.com/causality-group/causality-benchmark-dataset/issues">Request Feature</a>
@@ -70,12 +65,18 @@
         <li><a href="#installation">Installation</a></li>
       </ul>
     </li>
-    <li><a href="#usage">Usage</a></li>
-    <li><a href="#roadmap">Roadmap</a></li>
-    <li><a href="#contributing">Contributing</a></li>
+    <li>
+      <a href="#usage">Usage</a>
+      <ul>
+        <li><a href="#dataset-description">Dataset Description</a></li>
+        <li><a href="#backtesting">Backtesting</a></li>
+      </ul>
+    </li>
+    <!-- <li><a href="#roadmap">Roadmap</a></li> -->
+    <!-- <li><a href="#contributing">Contributing</a></li> -->
     <li><a href="#license">License</a></li>
     <li><a href="#contact">Contact</a></li>
-    <li><a href="#acknowledgments">Acknowledgments</a></li>
+    <!-- <li><a href="#acknowledgments">Acknowledgments</a></li> -->
   </ol>
 </details>
 
@@ -84,17 +85,18 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
+<!-- [![Product Name Screen Shot][product-screenshot]](https://example.com) -->
 
-Info about the project
+**TODO:** Summary about the project
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
 
 ### Built With
-
+**TODO:** Do we like these? we can list here the most important dependencies and links to the appropriate documentation for the given version.
 * [![Python][Python.org]][Python-url]
+* [![Poetry][Poetry.org]][Poetry-url]
 * [![Pandas][Pandas.org]][Pandas-url]
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -126,7 +128,7 @@ poetry run pre-commit install
 
 You're all set! Pre-commit hooks will run on git commit. Ensure your changes pass all checks before pushing.
 
-## Available Scripts
+### Available Scripts
 - `poetry run pytest`: Run the tests.
 - `poetry run black`: Run the code formatter.
 - `poetry run lint`: Run the linter.
@@ -140,16 +142,18 @@ You're all set! Pre-commit hooks will run on git commit. Ensure your changes pas
 
 
 <!-- USAGE EXAMPLES -->
+## Usage
 
-Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
+### Dataset Description
 
-_For more examples, please refer to the [Documentation](https://example.com)_
+### Backtesting
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
 
 <!-- ROADMAP -->
+<!--
 ## Roadmap
 
 - [ ] Feature 1
@@ -160,10 +164,11 @@ _For more examples, please refer to the [Documentation](https://example.com)_
 See the [open issues](https://github.com/causality-group/causality-benchmark-dataset/issues) for a full list of proposed features (and known issues).
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-
+-->
 
 
 <!-- CONTRIBUTING -->
+<!--
 ## Contributing
 
 Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
@@ -178,7 +183,7 @@ Don't forget to give the project a star! Thanks again!
 5. Open a Pull Request
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-
+-->
 
 
 <!-- LICENSE -->
@@ -202,6 +207,7 @@ Project Link: [https://github.com/causality-group/causality-benchmark-data](http
 
 
 <!-- ACKNOWLEDGMENTS -->
+<!--
 ## Acknowledgments
 
 * []()
@@ -209,7 +215,7 @@ Project Link: [https://github.com/causality-group/causality-benchmark-data](http
 * []()
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-
+-->
 
 
 <!-- MARKDOWN LINKS & IMAGES -->
@@ -229,5 +235,7 @@ Project Link: [https://github.com/causality-group/causality-benchmark-data](http
 [product-screenshot]: images/screenshot.png
 [Python.org]: https://img.shields.io/badge/Python-3.9-blue?style=for-the-badge&logo=python&logoColor=ffdd54&labelColor=3776ab&color=3776ab
 [Python-url]: https://python.org/
+[Poetry.org]: https://img.shields.io/badge/Poetry-%233B82F6.svg?style=for-the-badge&logo=poetry&logoColor=0B3D8D
+[Poetry-url]: https://python-poetry.org/
 [Pandas.org]: https://img.shields.io/badge/pandas-2.4-%23150458.svg?style=for-the-badge&logo=pandas&logoColor=white&labelColor=%23150458&color=%23150458
 [Pandas-url]: https://pandas.pydata.org/
