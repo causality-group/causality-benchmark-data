@@ -53,7 +53,7 @@
   <summary>Table of Contents</summary>
   <ol>
     <li>
-      <a href="#about-the-project">About The Project</a>
+      <a href="#about-the-project">About the Project</a>
       <ul>
         <li><a href="#built-with">Built With</a></li>
       </ul>
@@ -83,7 +83,7 @@
 
 
 <!-- ABOUT THE PROJECT -->
-## About The Project
+## About the Project
 
 <!-- [![Product Name Screen Shot][product-screenshot]](https://example.com) -->
 
@@ -98,7 +98,7 @@ Features include:
 * Overnight returns adjusted for splits, dividends, mergers and acquisitions
 * Intraday 5-minute VWAP, spread, and volume snapshots
 * SPY ETF data for hedging
-* CAPM betas and residuals for for market-neutral analysis
+* CAPM betas and residuals for market-neutral analysis
 
 Please contact us on [LinkedIn](https://www.linkedin.com/in/markhorvath-ai) for access to the dataset!
 
@@ -130,7 +130,7 @@ Follow these steps to set up the project on your local machine for development a
 
 ### Prerequisites
 
-Ensure you have the following installed on your local setup
+Ensure you have the following installed on your local setup:
 - Python 3.9.5
 - Poetry (see [installation instructions](https://python-poetry.org/docs/#installation))
 
@@ -169,7 +169,7 @@ You're all set! Pre-commit hooks will run on git commit. Ensure your changes pas
 
 [01-Backtesting-Signals.ipynb](https://github.com/causality-group/causality-benchmark-data/blob/main/causalitydata/notebook/01-Backtesting-Signals.ipynb) serves as a minimal example of utilizing the dataset and library for quantitative analysis, alpha signal research, and backtesting.
 
-The example showcases a daily backtest, relying on close-to-close adjusted returns of the 1500 most liquid companies in the US since 2007. Since the most liquid companies change constantly, we update our liquid universe at the start of each month. This dynamic universe is already pre-calculated in universe.csv.
+The example showcases a daily backtest, relying on close-to-close adjusted returns of the 1500 most liquid companies in the US since 2007. Since the most liquid companies change constantly, we update our liquid universe at the start of each month. This dynamic universe is already pre-calculated in the `universe.csv` data file.
 
 Assuming trading at the 16:00 close auction in the US, our example only uses features for alpha creation that are observable by 15:45. We plot the performance of some well-known alpha factors and invite you to experiment with building your quantitative investment model from there!
 
