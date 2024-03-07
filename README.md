@@ -18,7 +18,7 @@
 [![Forks][forks-shield]][forks-url]
 [![Stargazers][stars-shield]][stars-url]
 [![Issues][issues-shield]][issues-url]
-[![MIT License][license-shield]][license-url]
+[![BSD3 License][license-shield]][license-url]
 [![LinkedIn][linkedin-shield]][linkedin-url]
 
 
@@ -33,7 +33,7 @@
 <h3 align="center">Causality Benchmark Data</h3>
 
   <p align="center">
-    Showcasing causality benchmark data through a data loading library and a signal backtesting example.
+    Showcasing Causality Group's benchmark data through a data loading library and a signal backtesting example.
     <!-- <br />
     <a href="https://github.com/causality-group/causality-benchmark-dataset"><strong>Explore the docs »</strong></a> -->
     <br />
@@ -87,17 +87,37 @@
 
 <!-- [![Product Name Screen Shot][product-screenshot]](https://example.com) -->
 
-**TODO:** Summary about the project
+Causality Benchmark Dataset for US Equities
+
+Have you ever found yourself struggling to prepare clean financial data for analysis? Have you attempted to align data from various sources?
+
+With this repository you can explore Causality Group's curated historical dataset for academic and non-commercial use, covering the 1500 most liquid stocks in the US equities markets.
+
+Features include:
+* Liquid universe of 1500 stocks, updated monthly
+* Free from survivorship bias
+* Daily Open, High, Low, Close, VWAP, and Volume
+* Overnight returns adjusted for splits, dividends, mergers and acquisitions
+* Intraday 5-minute VWAP, spread, and volume snapshots
+* SPY ETF data for hedging
+* CAPM betas and residuals for for market-neutral analysis
+
+More details [here](#usage)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
 
 ### Built With
-**TODO:** Do we like these? we can list here the most important dependencies and links to the appropriate documentation for the given version.
+
 * [![Python][Python.org]][Python-url]
 * [![Poetry][Poetry.org]][Poetry-url]
+* [![Jupyter][Jupyter.org]][Jupyter-url]
+* [![Matplotlib][Matplotlib.org]][Matplotlib-url]
+* [![Numpy][Numpy.org]][Numpy-url]
 * [![Pandas][Pandas.org]][Pandas-url]
+* [![Sklearn][Sklearn.org]][Sklearn-url]
+* [![Scipy][Scipy.org]][Scipy-url]
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -229,13 +249,24 @@ Project Link: [https://github.com/causality-group/causality-benchmark-data](http
 [issues-shield]: https://img.shields.io/github/issues/causality-group/causality-benchmark-data.svg?style=for-the-badge
 [issues-url]: https://github.com/causality-group/causality-benchmark-data/issues
 [license-shield]: https://img.shields.io/github/license/causality-group/causality-benchmark-data.svg?style=for-the-badge
-[license-url]: https://github.com/causality-group/causality-benchmark-data/blob/master/LICENSE.txt
+<!-- TODO: Change the url to master before merging develop into master -->
+[license-url]: https://github.com/causality-group/causality-benchmark-data/blob/develop/LICENSE.txt
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://linkedin.com/company/causality-group
-[product-screenshot]: images/screenshot.png
-[Python.org]: https://img.shields.io/badge/Python-3.9-blue?style=for-the-badge&logo=python&logoColor=ffdd54&labelColor=3776ab&color=3776ab
+<!-- [product-screenshot]: images/screenshot.png -->
+[Python.org]: https://img.shields.io/badge/Python-3.9.5-blue?style=for-the-badge&logo=python&logoColor=ffdd54&labelColor=3776ab&color=3776ab
 [Python-url]: https://python.org/
-[Poetry.org]: https://img.shields.io/badge/Poetry-%233B82F6.svg?style=for-the-badge&logo=poetry&logoColor=0B3D8D
+[Poetry.org]: https://img.shields.io/badge/Poetry-1.7.1-%233B82F6?style=for-the-badge&logo=poetry&logoColor=0B3D8D&labelColor=%233B82F6
 [Poetry-url]: https://python-poetry.org/
-[Pandas.org]: https://img.shields.io/badge/pandas-2.4-%23150458.svg?style=for-the-badge&logo=pandas&logoColor=white&labelColor=%23150458&color=%23150458
+[Jupyter.org]: https://img.shields.io/badge/jupyter-8.6.0-%23FA0F00.svg?style=for-the-badge&logo=jupyter&logoColor=white&labelColor=%23FA0F00
+[Jupyter-url]: https://jupyter.org/
+[Pandas.org]: https://img.shields.io/badge/pandas-2.2.0-%23150458.svg?style=for-the-badge&logo=pandas&logoColor=white&labelColor=%23150458&color=%23150458
 [Pandas-url]: https://pandas.pydata.org/
+[Matplotlib.org]: https://img.shields.io/badge/Matplotlib-3.8.3-%23ffffff.svg?style=for-the-badge&logo=Matplotlib&logoColor=black&labelColor=%23ffffff
+[Matplotlib-url]: https://matplotlib.org
+[Numpy.org]: https://img.shields.io/badge/numpy-1.26.4-%23013243.svg?style=for-the-badge&logo=numpy&logoColor=white&labelColor=%23013243
+[Numpy-url]: https://numpy.org
+[Sklearn.org]: https://img.shields.io/badge/scikit--learn-1.0.1-%23F7931E.svg?style=for-the-badge&logo=scikit-learn&logoColor=white&labelColor=%23F7931E
+[Sklearn-url]: http://scikit-learn.org
+[SciPy.org]: https://img.shields.io/badge/SciPy-1.12.0-%230C55A5.svg?style=for-the-badge&logo=scipy&logoColor=%white&labelColor=%230C55A5
+[Scipy-url]: https://scipy.org
