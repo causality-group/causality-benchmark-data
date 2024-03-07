@@ -66,10 +66,10 @@
       </ul>
     </li>
     <li>
-      <a href="#usage">Usage</a>
+      <a href="#backtesting-and-data-layout">Backtesting and Data Layout</a>
       <ul>
-        <li><a href="#dataset-description">Dataset Description</a></li>
         <li><a href="#backtesting">Backtesting</a></li>
+        <li><a href="#data-layout">Data Layout</a></li>
       </ul>
     </li>
     <!-- <li><a href="#roadmap">Roadmap</a></li> -->
@@ -160,12 +160,10 @@ You're all set! Pre-commit hooks will run on git commit. Ensure your changes pas
 
 
 
-<!-- USAGE EXAMPLES -->
-## Usage
+<!-- BACKTESTING AND DATA -->
+## Backtesting and Data Layout
 
-### Dataset Description
-
-### Backtesting and Data Layout
+### Backtesting
 
 [01-Backtesting-Signals.ipynb](https://github.com/causality-group/causality-benchmark-data/blob/main/causalitydata/notebook/01-Backtesting-Signals.ipynb) serves as a minimal example of utilizing the dataset and library for quantitative analysis, alpha signal research, and backtesting.
 
@@ -173,6 +171,38 @@ The example showcases a daily backtest, relying on close-to-close adjusted retur
 
 Assuming trading at the 16:00 close auction in the US, our example only uses features for alpha creation that are observable by 15:45. We plot the performance of some well-known alpha factors and invite you to experiment with building your quantitative investment model from there!
 
+### Data Layout
+
+All data files in the benchmark dataset have the same structure.
+
+* Data files are in csv format.
+* The first row contains the header.
+* Rows represent different dates in an increasing order. There is only one row per date, i.e. there is no intraday granularity inside each file.
+* The first column corresponds to the index and contains date information.
+  * Date format: YYYY-MM-DD.
+* Every other column represents an individual asset in the universe.
+  * Asset identifier format: \<ticker>\_\<exchange>\_\<CFI>. E.g. AAPL\_XNAS\_ESXXXX.
+* All files have the same number of rows and columns.
+
+There are two types of files in the dataset, *daily* and *intraday*. *Daily* files contain data whose characteristic is that there can only be one datapoint per day, e.g. open auction price, daily volume, GICS sector information, ... . *Intraday* files contain information about the market movements during the US trading session, e.g. intraday prices and volumes. We accumulate this data in 5 minute bars. The name of *intraday* files starts with a integer identifying the bar time.
+
+#### File description
+
+Here we detail the data contained in some files that might not be trivial by their name.
+
+* **Daily**
+  * *universe.csv*: Mask of the tradable universe at each date. The universe is rebalanced at the beginning of each month. It is a good practice to apply the universe mask to all data before using it.
+  * *adj\_\<open, high, low, close\>.csv*: Corresponding daily metric adjusted for splits and mergers.
+  * *ret\_\<cc, co, oc, oo\>.csv*: Asset returns calculated on different time periods.
+    * cc: Close-to-Close. I.e., The position is entered at the close auction and exited at the following day's close auction.
+    * co: Close-to-Open. I.e., The position is entered at the close auction and exited at the following day's open auction.
+    * oc: Open-to-Close. I.e., The position is entered at the open auction and exited at the same day's close auction.
+    * oc: Open-to-Close. I.e., The position is entered at the open auction and exited at the following day's open auction.
+  * *SPY\_ret\_\<cc, co, oc, oo\>.csv*: SPY return. The SPY time series is placed in all asset columns for convenience.
+  * *beta\_\<cc, co, oc, oo\>.csv*: Beta correlation between an asset and the SPY ETF calculated using the returns associated to different time periods.
+  * *resid\_\<cc, co, oc, oo\>.csv*: Residual returns.
+* **Intraday**
+  * *\<hhmmss\>\_\<close, cost, return, volume, vwas, vwap\>\_5m.csv*: Market intraday data calcuated during the <i>hhmmss</i> bar. The bars are calculated on the time range [t-5min, t)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
