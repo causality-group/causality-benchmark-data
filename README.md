@@ -53,7 +53,7 @@
   <summary>Table of Contents</summary>
   <ol>
     <li>
-      <a href="#about-the-project">About The Project</a>
+      <a href="#about-the-project">About the Project</a>
       <ul>
         <li><a href="#built-with">Built With</a></li>
       </ul>
@@ -66,10 +66,11 @@
       </ul>
     </li>
     <li>
-      <a href="#usage">Usage</a>
+      <a href="#backtesting-and-data-layout">Backtesting and Data Layout</a>
       <ul>
-        <li><a href="#dataset-description">Dataset Description</a></li>
         <li><a href="#backtesting">Backtesting</a></li>
+        <li><a href="#data-layout">Data Layout</a></li>
+        <li><a href="#file-description">File Description</a></li>
       </ul>
     </li>
     <!-- <li><a href="#roadmap">Roadmap</a></li> -->
@@ -83,7 +84,7 @@
 
 
 <!-- ABOUT THE PROJECT -->
-## About The Project
+## About the Project
 
 <!-- [![Product Name Screen Shot][product-screenshot]](https://example.com) -->
 
@@ -98,7 +99,7 @@ Features include:
 * Overnight returns adjusted for splits, dividends, mergers and acquisitions
 * Intraday 5-minute VWAP, spread, and volume snapshots
 * SPY ETF data for hedging
-* CAPM betas and residuals for for market-neutral analysis
+* CAPM betas and residuals for market-neutral analysis
 
 Please contact us on [LinkedIn](https://www.linkedin.com/in/markhorvath-ai) for access to the dataset!
 
@@ -130,7 +131,7 @@ Follow these steps to set up the project on your local machine for development a
 
 ### Prerequisites
 
-Ensure you have the following installed on your local setup
+Ensure you have the following installed on your local setup:
 - Python 3.9.5
 - Poetry (see [installation instructions](https://python-poetry.org/docs/#installation))
 
@@ -160,19 +161,48 @@ You're all set! Pre-commit hooks will run on git commit. Ensure your changes pas
 
 
 
-<!-- USAGE EXAMPLES -->
-## Usage
+<!-- BACKTESTING AND DATA -->
+## Backtesting and Data Layout
 
-### Dataset Description
-
-### Backtesting and Data Layout
+### Backtesting
 
 [01-Backtesting-Signals.ipynb](https://github.com/causality-group/causality-benchmark-data/blob/main/causalitydata/notebook/01-Backtesting-Signals.ipynb) serves as a minimal example of utilizing the dataset and library for quantitative analysis, alpha signal research, and backtesting.
 
-The example showcases a daily backtest, relying on close-to-close adjusted returns of the 1500 most liquid companies in the US since 2007. Since the most liquid companies change constantly, we update our liquid universe at the start of each month. This dynamic universe is already pre-calculated in universe.csv.
+The example showcases a daily backtest, relying on close-to-close adjusted returns of the 1500 most liquid companies in the US since 2007. Since the most liquid companies change constantly, we update our liquid universe at the start of each month. This dynamic universe is already pre-calculated in the `universe.csv` data file.
 
 Assuming trading at the 16:00 close auction in the US, our example only uses features for alpha creation that are observable by 15:45. We plot the performance of some well-known alpha factors and invite you to experiment with building your quantitative investment model from there!
 
+### Data Layout
+
+All data files in the benchmark dataset have the same structure:
+
+* Data files are in csv format.
+* The first row contains the header.
+* Rows represent different dates in an increasing order. There is only one row per date, i.e. there is no intraday granularity inside each file.
+* The first column corresponds to the index and contains date information.
+  * Date format: YYYY-MM-DD.
+* Every other column represents an individual asset in the universe.
+  * Asset identifier format: \<ticker>\_\<exchange>\_\<CFI>. E.g. AAPL\_XNAS\_ESXXXX.
+* All files have the same number of rows and columns.
+
+There are two types of files in the dataset, *daily* and *intraday*. *Daily* files contain data whose characteristic is that there can only be one datapoint per day, e.g. open auction price, daily volume, GICS sector information, ... . *Intraday* files contain information about the market movements during the US trading session, e.g. intraday prices and volumes. We accumulate this data in 5 minute bars. The name of *intraday* files starts with a integer identifying the bar time.
+
+#### File Description
+
+Here we detail the data contained in some files that might not be trivial by their name.
+
+* **Daily**
+  * *universe.csv*: Mask of the tradable universe at each date. The universe is rebalanced at the beginning of each month.
+  * *ret\_\<cc, co, oc, oo\>.csv*: Adjusted asset returns calculated on different time periods:
+    * cc: Close-to-Close. I.e., The position is entered at the close auction and exited at the following day's close auction.
+    * co: Close-to-Open. I.e., The position is entered at the close auction and exited at the following day's open auction.
+    * oc: Open-to-Close. I.e., The position is entered at the open auction and exited at the same day's close auction.
+    * oc: Open-to-Close. I.e., The position is entered at the open auction and exited at the following day's open auction.
+  * *SPY\_ret\_\<cc, co, oc, oo\>.csv*: SPY ETF return. The SPY time series is placed in all asset columns for convenience.
+  * *beta\_\<cc, co, oc, oo\>.csv*: CAPM betas between assets and the SPY ETF for different time periods.
+  * *resid\_\<cc, co, oc, oo\>.csv*: CAPM residual returns on different time periods. `resid = ret - beta * SPY_ret`
+* **Intraday**
+  * *\<hhmmss\>\_\<close, cost, return, volume, vwas, vwap\>\_5m.csv*: Market intraday data snapshots calcuated during the <i>hhmmss</i> bar. The bars are calculated on the time range [t-5min, t)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
