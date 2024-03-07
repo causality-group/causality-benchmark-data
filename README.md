@@ -103,7 +103,7 @@ Features include:
 
 Please contact us on [LinkedIn](https://www.linkedin.com/in/markhorvath-ai) for access to the dataset!
 
-More details [here](#usage)
+More details [here](#backtesting-and-data-layout)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -137,12 +137,12 @@ Ensure you have the following installed on your local setup:
 
 ### Installation
 
-1. Clone the repository
-2. Install the dependencies
+1. Clone the repository.
+2. Install the dependencies:
 ```bash
 poetry install
 ```
-3. Install the pre-commit hooks
+3. Install the pre-commit hooks:
 ```bash
 poetry run pre-commit install
 ```
@@ -185,7 +185,7 @@ All data files in the benchmark dataset have the same structure:
   * Asset identifier format: `<ticker>_<exchange>_<CFI>`. E.g. `AAPL_XNAS_ESXXXX`.
 * All files have the same number of rows and columns.
 
-There are two types of files in the dataset, *daily* and *intraday*. *Daily* files contain data whose characteristic is that there can only be one datapoint per day, e.g. open auction price, daily volume, GICS sector information, ... . *Intraday* files contain information about the market movements during the US trading session, e.g. intraday prices and volumes. We accumulate this data in 5 minute bars. The name of *intraday* files starts with a integer identifying the bar time.
+There are two types of files in the dataset, *daily* and *intraday*. *Daily* files contain data whose characteristic is that there can only be one datapoint per day, e.g. open auction price, daily volume, GICS sector information, ... *Intraday* files contain information about the market movements during the US trading session, e.g. intraday prices and volumes. We accumulate this data in 5 minute bars. The name of *intraday* files starts with a integer identifying the bar time.
 
 #### File Description
 
