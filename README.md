@@ -40,9 +40,9 @@
     <br />
     <!-- <a href="https://github.com/causality-group/causality-benchmark-dataset">View Demo</a>
     · -->
-    <a href="https://github.com/causality-group/causality-benchmark-dataset/issues">Report Bug</a>
+    <a href="https://github.com/causality-group/causality-benchmark-data/issues">Report Bug</a>
     ·
-    <a href="https://github.com/causality-group/causality-benchmark-dataset/issues">Request Feature</a>
+    <a href="https://github.com/causality-group/causality-benchmark-data/issues/new">Request Feature</a>
   </p>
 </div>
 
@@ -100,7 +100,7 @@ Features include:
 * SPY ETF data for hedging
 * CAPM betas and residuals for for market-neutral analysis
 
-Please contact us on [LinkedIn](www.linkedin.com/in/markhorvath-ai) for access to the dataset!
+Please contact us on [LinkedIn](https://www.linkedin.com/in/markhorvath-ai) for access to the dataset!
 
 More details [here](#usage)
 
@@ -253,7 +253,7 @@ Please reach us at [LinkedIn](https://www.linkedin.com/in/markhorvath-ai) or vis
 [issues-shield]: https://img.shields.io/github/issues/causality-group/causality-benchmark-data.svg?style=for-the-badge
 [issues-url]: https://github.com/causality-group/causality-benchmark-data/issues
 [license-shield]: https://img.shields.io/github/license/causality-group/causality-benchmark-data.svg?style=for-the-badge
-[license-url]: https://github.com/causality-group/causality-benchmark-data/blob/master/LICENSE
+[license-url]: https://github.com/causality-group/causality-benchmark-data/blob/main/LICENSE
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://linkedin.com/company/causality-group
 <!-- [product-screenshot]: images/screenshot.png -->
