@@ -100,7 +100,7 @@ Features include:
 * SPY ETF data for hedging
 * CAPM betas and residuals for for market-neutral analysis
 
-Please contact us on [LinkedIn](www.linkedin.com/in/markhorvath-ai) for access to the dataset!
+Please contact us on [LinkedIn](https://www.linkedin.com/in/markhorvath-ai) for access to the dataset!
 
 More details [here](#usage)
 
