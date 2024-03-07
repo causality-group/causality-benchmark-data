@@ -176,13 +176,13 @@ Assuming trading at the 16:00 close auction in the US, our example only uses fea
 
 All data files in the benchmark dataset have the same structure:
 
-* Data files are in csv format.
+* Data files are in `.csv` format.
 * The first row contains the header.
 * Rows represent different dates in an increasing order. There is only one row per date, i.e. there is no intraday granularity inside each file.
-* The first column corresponds to the index and contains date information.
-  * Date format: YYYY-MM-DD.
-* Every other column represents an individual asset in the universe.
-  * Asset identifier format: \<ticker>\_\<exchange>\_\<CFI>. E.g. AAPL\_XNAS\_ESXXXX.
+* The first column corresponds to the index and contains the date information, at which the given value is observable:
+  * Date format: `YYYY-MM-DD`.
+* Every other column represents an individual asset in the universe:
+  * Asset identifier format: `<ticker>_<exchange>_<CFI>`. E.g. `AAPL_XNAS_ESXXXX`.
 * All files have the same number of rows and columns.
 
 There are two types of files in the dataset, *daily* and *intraday*. *Daily* files contain data whose characteristic is that there can only be one datapoint per day, e.g. open auction price, daily volume, GICS sector information, ... . *Intraday* files contain information about the market movements during the US trading session, e.g. intraday prices and volumes. We accumulate this data in 5 minute bars. The name of *intraday* files starts with a integer identifying the bar time.
@@ -192,17 +192,17 @@ There are two types of files in the dataset, *daily* and *intraday*. *Daily* fil
 Here we detail the data contained in some files that might not be trivial by their name.
 
 * **Daily**
-  * *universe.csv*: Mask of the tradable universe at each date. The universe is rebalanced at the beginning of each month.
-  * *ret\_\<cc, co, oc, oo\>.csv*: Adjusted asset returns calculated on different time periods:
-    * cc: Close-to-Close. I.e., The position is entered at the close auction and exited at the following day's close auction.
-    * co: Close-to-Open. I.e., The position is entered at the close auction and exited at the following day's open auction.
-    * oc: Open-to-Close. I.e., The position is entered at the open auction and exited at the same day's close auction.
-    * oc: Open-to-Close. I.e., The position is entered at the open auction and exited at the following day's open auction.
-  * *SPY\_ret\_\<cc, co, oc, oo\>.csv*: SPY ETF return. The SPY time series is placed in all asset columns for convenience.
-  * *beta\_\<cc, co, oc, oo\>.csv*: CAPM betas between assets and the SPY ETF for different time periods.
-  * *resid\_\<cc, co, oc, oo\>.csv*: CAPM residual returns on different time periods. `resid = ret - beta * SPY_ret`
+  * `universe.csv`: Mask of the tradable universe at each date. The universe is rebalanced at the beginning of each month.
+  * `ret_<cc, co, oc, oo>.csv`: Adjusted asset returns calculated on different time periods:
+    * `cc`: Close-to-Close, the position is entered at the close auction and exited at the following day's close auction.
+    * `co`: Close-to-Open, the position is entered at the close auction and exited at the following day's open auction.
+    * `oc`: Open-to-Close, the position is entered at the open auction and exited at the same day's close auction.
+    * `oo`: Open-to-Open, the position is entered at the open auction and exited at the following day's open auction.
+  * `SPY_ret_<cc, co, oc, oo>.csv`: SPY ETF return. The SPY time series is placed in all asset columns for convenience.
+  * `beta_<cc, co, oc, oo>.csv`: CAPM betas between assets and the SPY ETF for different time periods.
+  * `resid_<cc, co, oc, oo>.csv`: CAPM residual returns on different time periods. `resid = ret - beta * SPY_ret`
 * **Intraday**
-  * *\<hhmmss\>\_\<close, cost, return, volume, vwas, vwap\>\_5m.csv*: Market intraday data snapshots calcuated during the <i>hhmmss</i> bar. The bars are calculated on the time range [t-5min, t)
+  * `<hhmmss>_<close, cost, return, volume, vwas, vwap>_5m.csv`: Intraday market data snapshots at <i>hhmmss</i> bar. These backward looking bars are calculated on the time range `[t-5min, t)`.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
