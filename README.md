@@ -26,7 +26,7 @@
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-  <a href="https://github.com/causality-group/causality-benchmark-dataset">
+  <a href="https://www.linkedin.com/company/causality-group">
     <img src="images/logo.png" alt="Logo" width="600" height="160">
   </a>
 
@@ -87,8 +87,6 @@
 
 <!-- [![Product Name Screen Shot][product-screenshot]](https://example.com) -->
 
-Causality Benchmark Dataset for US Equities
-
 Have you ever found yourself struggling to prepare clean financial data for analysis? Have you attempted to align data from various sources?
 
 With this repository you can explore Causality Group's curated historical dataset for academic and non-commercial use, covering the 1500 most liquid stocks in the US equities markets.
@@ -101,6 +99,8 @@ Features include:
 * Intraday 5-minute VWAP, spread, and volume snapshots
 * SPY ETF data for hedging
 * CAPM betas and residuals for for market-neutral analysis
+
+Please contact us on [LinkedIn](www.linkedin.com/in/markhorvath-ai) for access to the dataset!
 
 More details [here](#usage)
 
@@ -149,7 +149,6 @@ poetry run pre-commit install
 You're all set! Pre-commit hooks will run on git commit. Ensure your changes pass all checks before pushing.
 
 ### Available Scripts
-- `poetry run pytest`: Run the tests.
 - `poetry run black`: Run the code formatter.
 - `poetry run lint`: Run the linter.
 - `poetry run install-ipykernel`: Install the causality kernel for Jupyter.
@@ -166,7 +165,14 @@ You're all set! Pre-commit hooks will run on git commit. Ensure your changes pas
 
 ### Dataset Description
 
-### Backtesting
+### Backtesting and Data Layout
+
+[01-Backtesting-Signals.ipynb](https://github.com/causality-group/causality-benchmark-data/blob/develop/causalitydata/notebook/01-Backtesting-Signals.ipynb) serves as a minimal example of utilizing the dataset and library for quantitative analysis, alpha signal research, and backtesting.
+
+The example showcases a daily backtest, relying on close-to-close adjusted returns of the 1500 most liquid companies in the US since 2007. Since the most liquid companies change constantly, we update our liquid universe at the start of each month. This dynamic universe is already pre-calculated in universe.csv.
+
+Assuming trading at the 16:00 close auction in the US, our example only uses features for alpha creation that are observable by 15:45. We plot the performance of some well-known alpha factors and invite you to experiment with building your quantitative investment model from there!
+
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -218,9 +224,7 @@ Distributed under the BSD-3 License. See `LICENSE.txt` for more information.
 <!-- CONTACT -->
 ## Contact
 
-Causality Group's Information Contact - info@causality-group.com
-
-Project Link: [https://github.com/causality-group/causality-benchmark-data](https://github.com/causality-group/causality-benchmark-data)
+Please reach us at [LinkedIn](https://www.linkedin.com/in/markhorvath-ai) or visit our [website](https://www.causalitygroup.com)!
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
