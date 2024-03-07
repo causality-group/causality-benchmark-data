@@ -40,9 +40,9 @@
     <br />
     <!-- <a href="https://github.com/causality-group/causality-benchmark-dataset">View Demo</a>
     · -->
-    <a href="https://github.com/causality-group/causality-benchmark-dataset/issues">Report Bug</a>
+    <a href="https://github.com/causality-group/causality-benchmark-data/issues">Report Bug</a>
     ·
-    <a href="https://github.com/causality-group/causality-benchmark-dataset/issues">Request Feature</a>
+    <a href="https://github.com/causality-group/causality-benchmark-data/issues/new">Request Feature</a>
   </p>
 </div>
 
