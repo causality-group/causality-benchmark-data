@@ -66,10 +66,10 @@
       </ul>
     </li>
     <li>
-      <a href="#usage">Usage</a>
+      <a href="#backtesting-and-data-layout">Backtesting and Data Layout</a>
       <ul>
-        <li><a href="#dataset-description">Dataset Description</a></li>
         <li><a href="#backtesting">Backtesting</a></li>
+        <li><a href="#data-layout">Data Layout</a></li>
       </ul>
     </li>
     <!-- <li><a href="#roadmap">Roadmap</a></li> -->
@@ -160,18 +160,18 @@ You're all set! Pre-commit hooks will run on git commit. Ensure your changes pas
 
 
 
-<!-- USAGE EXAMPLES -->
-## Usage
+<!-- BACKTESTING AND DATA -->
+## Backtesting and Data Layout
 
-### Dataset Description
-
-### Backtesting and Data Layout
+### Backtesting
 
 [01-Backtesting-Signals.ipynb](https://github.com/causality-group/causality-benchmark-data/blob/main/causalitydata/notebook/01-Backtesting-Signals.ipynb) serves as a minimal example of utilizing the dataset and library for quantitative analysis, alpha signal research, and backtesting.
 
 The example showcases a daily backtest, relying on close-to-close adjusted returns of the 1500 most liquid companies in the US since 2007. Since the most liquid companies change constantly, we update our liquid universe at the start of each month. This dynamic universe is already pre-calculated in universe.csv.
 
 Assuming trading at the 16:00 close auction in the US, our example only uses features for alpha creation that are observable by 15:45. We plot the performance of some well-known alpha factors and invite you to experiment with building your quantitative investment model from there!
+
+### Data Layout
 
 All data files in the benchmark dataset have the same structure.
 
@@ -203,8 +203,6 @@ Here we detail the data contained in some files that might not be trivial by the
   * *resid\_\<cc, co, oc, oo\>.csv*: Residual returns.
 * **Intraday**
   * *\<hhmmss\>\_\<close, cost, return, volume, vwas, vwap\>\_5m.csv*: Market intraday data calcuated during the <i>hhmmss</i> bar. The bars are calculated on the time range [t-5min, t)
-
-### Backtesting
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
