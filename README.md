@@ -70,6 +70,7 @@
       <ul>
         <li><a href="#backtesting">Backtesting</a></li>
         <li><a href="#data-layout">Data Layout</a></li>
+        <li><a href="#file-description">File Description</a></li>
       </ul>
     </li>
     <!-- <li><a href="#roadmap">Roadmap</a></li> -->
@@ -173,7 +174,7 @@ Assuming trading at the 16:00 close auction in the US, our example only uses fea
 
 ### Data Layout
 
-All data files in the benchmark dataset have the same structure.
+All data files in the benchmark dataset have the same structure:
 
 * Data files are in csv format.
 * The first row contains the header.
@@ -186,23 +187,22 @@ All data files in the benchmark dataset have the same structure.
 
 There are two types of files in the dataset, *daily* and *intraday*. *Daily* files contain data whose characteristic is that there can only be one datapoint per day, e.g. open auction price, daily volume, GICS sector information, ... . *Intraday* files contain information about the market movements during the US trading session, e.g. intraday prices and volumes. We accumulate this data in 5 minute bars. The name of *intraday* files starts with a integer identifying the bar time.
 
-#### File description
+#### File Description
 
 Here we detail the data contained in some files that might not be trivial by their name.
 
 * **Daily**
-  * *universe.csv*: Mask of the tradable universe at each date. The universe is rebalanced at the beginning of each month. It is a good practice to apply the universe mask to all data before using it.
-  * *adj\_\<open, high, low, close\>.csv*: Corresponding daily metric adjusted for splits and mergers.
-  * *ret\_\<cc, co, oc, oo\>.csv*: Asset returns calculated on different time periods.
+  * *universe.csv*: Mask of the tradable universe at each date. The universe is rebalanced at the beginning of each month.
+  * *ret\_\<cc, co, oc, oo\>.csv*: Adjusted asset returns calculated on different time periods:
     * cc: Close-to-Close. I.e., The position is entered at the close auction and exited at the following day's close auction.
     * co: Close-to-Open. I.e., The position is entered at the close auction and exited at the following day's open auction.
     * oc: Open-to-Close. I.e., The position is entered at the open auction and exited at the same day's close auction.
     * oc: Open-to-Close. I.e., The position is entered at the open auction and exited at the following day's open auction.
-  * *SPY\_ret\_\<cc, co, oc, oo\>.csv*: SPY return. The SPY time series is placed in all asset columns for convenience.
-  * *beta\_\<cc, co, oc, oo\>.csv*: Beta correlation between an asset and the SPY ETF calculated using the returns associated to different time periods.
-  * *resid\_\<cc, co, oc, oo\>.csv*: Residual returns.
+  * *SPY\_ret\_\<cc, co, oc, oo\>.csv*: SPY ETF return. The SPY time series is placed in all asset columns for convenience.
+  * *beta\_\<cc, co, oc, oo\>.csv*: CAPM betas between assets and the SPY ETF for different time periods.
+  * *resid\_\<cc, co, oc, oo\>.csv*: CAPM residual returns on different time periods. `resid = ret - beta * SPY_ret`
 * **Intraday**
-  * *\<hhmmss\>\_\<close, cost, return, volume, vwas, vwap\>\_5m.csv*: Market intraday data calcuated during the <i>hhmmss</i> bar. The bars are calculated on the time range [t-5min, t)
+  * *\<hhmmss\>\_\<close, cost, return, volume, vwas, vwap\>\_5m.csv*: Market intraday data snapshots calcuated during the <i>hhmmss</i> bar. The bars are calculated on the time range [t-5min, t)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
