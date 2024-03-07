@@ -86,24 +86,22 @@
 <!-- ABOUT THE PROJECT -->
 ## About the Project
 
-<!-- [![Product Name Screen Shot][product-screenshot]](https://example.com) -->
+Have you ever found yourself struggling to prepare clean financial data for analysis or to align data from various sources?
 
-Have you ever found yourself struggling to prepare clean financial data for analysis? Have you attempted to align data from various sources?
-
-With this repository you can explore Causality Group's curated historical dataset for academic and non-commercial use, covering the 1500 most liquid stocks in the US equities markets.
+With this repository, you can explore Causality Group's curated historical dataset for academic and non-commercial use, covering the 1500 most liquid stocks in the US equities markets.
 
 Features include:
 * Liquid universe of 1500 stocks, updated monthly
 * Free from survivorship bias
 * Daily Open, High, Low, Close, VWAP, and Volume
-* Overnight returns adjusted for splits, dividends, mergers and acquisitions
+* Overnight returns adjusted for splits, dividends, mergers, and acquisitions
 * Intraday 5-minute VWAP, spread, and volume snapshots
 * SPY ETF data for hedging
 * CAPM betas and residuals for market-neutral analysis
 
 Please contact us on [LinkedIn](https://www.linkedin.com/in/markhorvath-ai) for access to the dataset!
 
-More details [here](#usage)
+More details [here](#backtesting-and-data-layout)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -137,12 +135,12 @@ Ensure you have the following installed on your local setup:
 
 ### Installation
 
-1. Clone the repository
-2. Install the dependencies
+1. Clone the repository.
+2. Install the dependencies:
 ```bash
 poetry install
 ```
-3. Install the pre-commit hooks
+3. Install the pre-commit hooks:
 ```bash
 poetry run pre-commit install
 ```
@@ -150,18 +148,18 @@ poetry run pre-commit install
 You're all set! Pre-commit hooks will run on git commit. Ensure your changes pass all checks before pushing.
 
 ### Available Scripts
-- `poetry run black`: Run the code formatter.
-- `poetry run lint`: Run the linter.
-- `poetry run install-ipykernel`: Install the causality kernel for Jupyter.
-- `poetry run uninstall-ipykernel`: Uninstall the causality kernel for Jupyter.
+- `poetry run black`: Runs the code formatter.
+- `poetry run lint`: Runs the linter.
+- `poetry run install-ipykernel`: Installs the causality kernel for Jupyter.
+- `poetry run uninstall-ipykernel`: Uninstalls the causality kernel for Jupyter.
 
-> **Note:** Remember, you need to install the optional `ipykernel` group of dependencies to run the ipykernel scripts. Use `poetry install --with jupyter`.
+> **Note:** You need to install the optional `ipykernel` group of dependencies to run the ipykernel scripts. Use `poetry install --with jupyter`.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
 
-<!-- BACKTESTING AND DATA -->
+<!-- BACKTESTING AND DATA LAYOUT -->
 ## Backtesting and Data Layout
 
 ### Backtesting
@@ -178,14 +176,14 @@ All data files in the benchmark dataset have the same structure:
 
 * Data files are in `.csv` format.
 * The first row contains the header.
-* Rows represent different dates in an increasing order. There is only one row per date, i.e. there is no intraday granularity inside each file.
+* Rows represent different dates in increasing order. There is only one row per date, i.e., there is no intraday granularity within the files.
 * The first column corresponds to the index and contains the date information, at which the given value is observable:
   * Date format: `YYYY-MM-DD`.
 * Every other column represents an individual asset in the universe:
-  * Asset identifier format: `<ticker>_<exchange>_<CFI>`. E.g. `AAPL_XNAS_ESXXXX`.
+  * Asset identifier format: `<ticker>_<exchange>_<CFI>`. E.g., `AAPL_XNAS_ESXXXX`.
 * All files have the same number of rows and columns.
 
-There are two types of files in the dataset, *daily* and *intraday*. *Daily* files contain data whose characteristic is that there can only be one datapoint per day, e.g. open auction price, daily volume, GICS sector information, ... . *Intraday* files contain information about the market movements during the US trading session, e.g. intraday prices and volumes. We accumulate this data in 5 minute bars. The name of *intraday* files starts with a integer identifying the bar time.
+There are two types of files in the dataset, *daily* and *intraday*. *Daily* files contain data whose characteristic is that there can only be one datapoint per day, e.g., open auction price, daily volume, GICS sector information, etc. *Intraday* files contain information about the market movements during the US trading session, e.g., intraday prices and volumes. We accumulate this data in 5-minute bars. The name of *intraday* files starts with an integer identifying the bar time.
 
 #### File Description
 
@@ -202,7 +200,7 @@ Here we detail the data contained in some files that might not be trivial by the
   * `beta_<cc, co, oc, oo>.csv`: CAPM betas between assets and the SPY ETF for different time periods.
   * `resid_<cc, co, oc, oo>.csv`: CAPM residual returns on different time periods. `resid = ret - beta * SPY_ret`
 * **Intraday**
-  * `<hhmmss>_<close, cost, return, volume, vwas, vwap>_5m.csv`: Intraday market data snapshots at <i>hhmmss</i> bar. These backward looking bars are calculated on the time range `[t-5min, t)`.
+  * `<hhmmss>_<close, cost, return, volume, vwas, vwap>_5m.csv`: Intraday market data snapshots at <i>hhmmss</i> bar. These backward-looking bars are calculated on the time range `[t-5min, t)`.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
