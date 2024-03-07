@@ -100,7 +100,7 @@ Features include:
 * SPY ETF data for hedging
 * CAPM betas and residuals for for market-neutral analysis
 
-Please contact us on [LinkedIn](www.linkedin.com/in/markhorvath-ai) for access to the dataset!
+Please contact us on [LinkedIn](https://www.linkedin.com/in/markhorvath-ai) for access to the dataset!
 
 More details [here](#usage)
 
@@ -167,7 +167,7 @@ You're all set! Pre-commit hooks will run on git commit. Ensure your changes pas
 
 ### Backtesting and Data Layout
 
-[01-Backtesting-Signals.ipynb](https://github.com/causality-group/causality-benchmark-data/blob/develop/causalitydata/notebook/01-Backtesting-Signals.ipynb) serves as a minimal example of utilizing the dataset and library for quantitative analysis, alpha signal research, and backtesting.
+[01-Backtesting-Signals.ipynb](https://github.com/causality-group/causality-benchmark-data/blob/main/causalitydata/notebook/01-Backtesting-Signals.ipynb) serves as a minimal example of utilizing the dataset and library for quantitative analysis, alpha signal research, and backtesting.
 
 The example showcases a daily backtest, relying on close-to-close adjusted returns of the 1500 most liquid companies in the US since 2007. Since the most liquid companies change constantly, we update our liquid universe at the start of each month. This dynamic universe is already pre-calculated in universe.csv.
 
@@ -215,7 +215,7 @@ Don't forget to give the project a star! Thanks again!
 <!-- LICENSE -->
 ## License
 
-Distributed under the BSD-3 License. See `LICENSE.txt` for more information.
+Distributed under the BSD-3 License. See `LICENSE` for more information.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -253,8 +253,7 @@ Please reach us at [LinkedIn](https://www.linkedin.com/in/markhorvath-ai) or vis
 [issues-shield]: https://img.shields.io/github/issues/causality-group/causality-benchmark-data.svg?style=for-the-badge
 [issues-url]: https://github.com/causality-group/causality-benchmark-data/issues
 [license-shield]: https://img.shields.io/github/license/causality-group/causality-benchmark-data.svg?style=for-the-badge
-<!-- TODO: Change the url to master before merging develop into master -->
-[license-url]: https://github.com/causality-group/causality-benchmark-data/blob/develop/LICENSE.txt
+[license-url]: https://github.com/causality-group/causality-benchmark-data/blob/main/LICENSE
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://linkedin.com/company/causality-group
 <!-- [product-screenshot]: images/screenshot.png -->
