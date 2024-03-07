@@ -1,4 +1,4 @@
-BSD-3-Clause
+BSD3 License
 
 Copyright 2024 Causality Group
 

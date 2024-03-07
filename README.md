@@ -250,7 +250,7 @@ Project Link: [https://github.com/causality-group/causality-benchmark-data](http
 [issues-url]: https://github.com/causality-group/causality-benchmark-data/issues
 [license-shield]: https://img.shields.io/github/license/causality-group/causality-benchmark-data.svg?style=for-the-badge
 <!-- TODO: Change the url to master before merging develop into master -->
-[license-url]: https://github.com/causality-group/causality-benchmark-data/blob/develop/LICENSE.txt
+[license-url]: https://github.com/causality-group/causality-benchmark-data/blob/garikoitza-dev__README_data_details/LICENSE.txt
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://linkedin.com/company/causality-group
 <!-- [product-screenshot]: images/screenshot.png -->
