@@ -140,20 +140,22 @@ Ensure you have the following installed on your local setup:
 ```bash
 poetry install
 ```
+> **Optional:** If you want to use the Jupyter kernel, install the optional `jupyter` group of dependencies with `poetry install --with jupyter`.
+
 3. Install the pre-commit hooks:
 ```bash
 poetry run pre-commit install
 ```
 
-You're all set! Pre-commit hooks will run on git commit. Ensure your changes pass all checks before pushing.
+You're all set! Pre-commit hooks will run on git commit (more information in [pre-commit docs](https://pre-commit.com/index.html)). Ensure your changes pass all checks before pushing.
 
 ### Available Scripts
-- `poetry run black`: Runs the code formatter.
-- `poetry run lint`: Runs the linter.
+- `poetry run black ./causalitydata`: Runs the code formatter.
+- `poetry run pylint ./causalitydata`: Runs the linter.
 - `poetry run install-ipykernel`: Installs the causality kernel for Jupyter.
 - `poetry run uninstall-ipykernel`: Uninstalls the causality kernel for Jupyter.
 
-> **Note:** You need to install the optional `ipykernel` group of dependencies to run the ipykernel scripts. Use `poetry install --with jupyter`.
+> **Note:** To run the ipykernel scripts you need to install the optional `jupyter` group of dependencies. Use `poetry install --with jupyter`.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
